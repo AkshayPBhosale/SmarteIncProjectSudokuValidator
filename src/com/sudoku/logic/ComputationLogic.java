@@ -39,8 +39,7 @@ public class ComputationLogic {
 
 	// combined method to check if a number possible to a row,col position is ok
 	public boolean checkValidity(int myArray[][], int row, int col, int digit) {
-		return !(isNumberPresentInRow(myArray, row, digit) && !isNumberPresentInCol(myArray, col, digit)
-				&& !isNumberPresentInInnerGrid(myArray, row, col, digit));
+		return !isNumberPresentInRow(myArray, row, digit) && !isNumberPresentInCol(myArray, col, digit)&& !isNumberPresentInInnerGrid(myArray, row, col, digit);
 	}
 
 	public void display(int arr[][]) {
