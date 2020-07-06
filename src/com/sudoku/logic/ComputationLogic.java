@@ -38,9 +38,15 @@ public class ComputationLogic {
 	}
 
 	// combined method to check if a number possible to a row,col position is ok
-	public boolean checkValidity(int myArray[][], int row, int col, int digit) {
-		return !isNumberPresentInRow(myArray, row, digit) && !isNumberPresentInCol(myArray, col, digit)&& !isNumberPresentInInnerGrid(myArray, row, col, digit);
-	}
+		public boolean checkValidity(int myArray[][], int row, int col, int digit) {
+			if (digit > 0 && digit <= 9) {
+				return !isNumberPresentInRow(myArray, row, digit) && !isNumberPresentInCol(myArray, col, digit)
+						&& !isNumberPresentInInnerGrid(myArray, row, col, digit);
+			} else {
+				System.out.println("Please insert digits 1 to  9 only");
+				return false;
+			}
+		}
 
 	public void display(int arr[][]) {
 		for (int i = 0; i < SudokuConstants.SUDOKU_SIZE; i++) {
